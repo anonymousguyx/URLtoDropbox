@@ -5,29 +5,7 @@ $(document).keypress(function(e) {
 });
 
 $("#btn_save").click(function() {
-	var options = {
-        data: post_data,
-        type: 'POST',
-
-        success: function () {
-            console.log("Success! File saved to your Dropbox.");
-        },
-
-        progress: function(progress) {
-            console.log("Progress: " + progress);
-        },
-
-        cancel: function() {
-            console.log("Cancelled");
-        },
-
-        error: function(errorMessage) {
-            console.log("Error: " + errorMessage);
-            console.log("Data: " + results);
-            console.log("URL: " + kwl_url);
-        }
-    };
-	Dropbox.save($('#url').val(),$('#name').val(), options);
+	Dropbox.save($('#url').val(),$('#name').val());
 });
 $("#url").on("propertychange change keyup paste input", function(){
 	var url = $('#url').val();
